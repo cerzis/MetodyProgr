@@ -1,0 +1,56 @@
+ #include <iostream>
+#include <limits>
+void program6 () {
+    int n, c, d1, d2, d3, d4;
+    std::cout << "Vvedite 4 zn chislo \n";
+    std::cin >> n;
+    if (n < 1000 || n>9999 )
+    {
+        return;
+    }
+    if (std::cin.fail()) {
+        std::cout << "\nInput error!!!";
+
+        std::cin.clear();
+
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    std::cout << "Vvedite cifru kotoruy hotite proverit \n";
+    std::cin >> c;
+
+    if (c > 9 || c < -9) {
+        std::cout << "povtorite popytku i Vvedite cifru , a ne chislo ";
+        return;
+    }
+    if (std::cin.fail()) {
+        std::cout << "\nInput error!!!";
+
+        std::cin.clear();
+
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    d1 = n / 1000;
+    d2 = (n / 100) % 10;
+    d3 = (n / 10) % 10;
+    d4 = n % 10;
+    if (d1 == c || d2 == c || d3 == c || d4 == c) {
+        std::cout << "yes \n";
+
+    } else {
+        std::cout << "no \n";
+    }
+}
+    int main()
+    {
+        bool answer;
+        program6();
+        std::cout << "\nOne more? (1 - yes, 0 - no): ";
+        std::cin >> answer;
+        if (answer)
+        {
+            main();
+        }
+        return 0;
+    }
