@@ -1,0 +1,42 @@
+ #include <iostream>
+#include <limits>
+void program8 () {
+    int n, d1, d2, d3, d4;
+    std::cout << "Vvedite 4 zn chislo \n";
+    std::cin >> n;
+n= abs(n);
+
+    if (std::cin.fail()) {
+        std::cout << "\nInput error!!!";
+
+        std::cin.clear();
+
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    if (n < 1000 || n > 9999 ) {
+        std::cout << "vy vveli ne 4 zn chislo";
+        return;
+    }
+
+
+    if (n / 1000 == n % 10 && (n / 100) % 10 == (n / 10) % 10) {
+
+        std::cout << "yes \n";
+
+    } else {
+        std::cout << "no \n";
+    }
+}
+     int main()
+    {
+        bool answer;
+        program8();
+        std::cout << "\nOne more? (1 - yes, 0 - no): ";
+        std::cin >> answer;
+        if (answer)
+        {
+            main();
+        }
+        return 0;
+    }
