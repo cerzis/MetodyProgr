@@ -1,0 +1,40 @@
+ #include <iostream>
+#include <limits>
+void program10 () {
+    int a, b, c, x, y, s1, s2;
+    std::cout << "vvedite storony a,b,c kirpicha i storony otverstia x,y \n";
+    std::cin >> a;
+    std::cin >> b;
+    std::cin >> c;
+    std::cin >> x;
+    std::cin >> y;
+    s1 = a * b * c;
+    s2 = x * y;
+
+
+    if (std::cin.fail()) {
+        std::cout << "\nInput error!!!";
+
+        std::cin.clear();
+
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+   if (a<0 || b<0 || c<0 || x<0 || y<0 ){
+       std::cout << "storony ne mogut byt otricatelnymi";
+       return;
+
+   }
+}
+     int main()
+    {
+        bool answer;
+        program10();
+        std::cout << "\nOne more? (1 - yes, 0 - no): ";
+        std::cin >> answer;
+        if (answer)
+        {
+            main();
+        }
+        return 0;
+    }
