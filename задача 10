@@ -1,0 +1,59 @@
+ #include <iostream>
+#include <limits>
+void program10 () {
+    int n, d1, d2, d3, d4;
+    std::cout << "Vvedite 4 zn chislo \n";
+    std::cin >> n;
+n= abs(n);
+
+    if (std::cin.fail()) {
+        std::cout << "\nInput error!!!";
+
+        std::cin.clear();
+
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    if (n < 1000 || n > 9999 ) {
+        std::cout << "vy vveli ne 4 zn chislo";
+        return;
+    }
+    d1 = n / 1000;
+    d2 = (n / 100) % 10;
+    d3 = (n / 10) % 10;
+    d4 = n % 10;
+
+
+    if (d4<d3 && d3<d2 && d2<d1) {
+
+        std::cout << "ubyvaushaya \n";
+
+    } else if (d1==d2 && d2==d3 && d3==d4){
+        std::cout << "postoyannaya \n";
+    }
+    else if (d4>d3 && d3>d2 && d2>d1) {
+        std::cout << "vozrastaushaya \n";
+    }
+    else if (d4>=d3 && d3>=d2 && d2>=d1){
+        std::cout << "neubyvaushaya \n";
+    }
+    else if (d4<=d3 && d3<=d2 && d2<=d1 ) {
+        std::cout << "nevozrastaushaya \n";
+    }
+    else {
+        std::cout << "ne obrazuet posledovatelnosti \n";
+    }
+
+}
+     int main()
+    {
+        bool answer;
+        program10();
+        std::cout << "\nOne more? (1 - yes, 0 - no): ";
+        std::cin >> answer;
+        if (answer)
+        {
+            main();
+        }
+        return 0;
+    }
