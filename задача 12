@@ -1,0 +1,59 @@
+#include <iostream>
+#include <limits>
+
+void program12 () {
+    int a,b,c;
+    std::cout << "vvedite 3 naturalnyx chisla \n";
+    std::cin >>a;
+    std::cin >>b;
+    std::cin >>c;
+
+    if (std::cin.fail()) {
+        std::cout << "\nInput error!!!";
+
+        std::cin.clear();
+
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    if (a<= 0 || b<=0 || c<=0 )
+    {
+        std::cout <<"storona ne mozhet byt ravna 0";
+        return;
+    }
+    if (a+b>c && b+c>a && a+c>b)
+    {
+        if (a==b && b==c && a==c)
+        {
+            std::cout <<"ravnostoronniy";
+
+        }
+        else if (a==b||b==c||a==c)  {
+            std::cout <<"ravnobedrennyi";
+        }
+        else if (a!=b && a!=c && b!=c)
+        {
+            std ::cout <<"raznostoronnyi";
+        }
+    }
+    else {
+        std::cout <<"ne obrazuet treygolnik";
+    }
+    if ((b^2+c^2)==a^2 || (a^2+c^2)==b^2 || (a^2+b^2)==c^2 )
+    {
+        std::cout <<" pryamougolniy";
+    }
+
+}
+int main()
+{
+    bool answer;
+    program12();
+    std::cout << "\nOne more? (1 - yes, 0 - no): ";
+    std::cin >> answer;
+    if (answer)
+    {
+        main();
+    }
+    return 0;
+}
