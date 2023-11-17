@@ -1,0 +1,64 @@
+#include <iostream>
+#include <limits>
+
+void program11 () {
+    int a, b, c, x, y;
+    std::cout << "Vvedite storony kirpicha a,b,c i storony otverstiya x,y  \n";
+    std::cin >> a;
+    std::cin >> b;
+    std::cin >> c;
+    std::cin >> x;
+    std::cin >> y;
+    if (std::cin.fail()) {
+        std::cout << "\nInput error!!!";
+
+        std::cin.clear();
+
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    if (a<=0 || b<=0 || c<=0 || x<=0 || y<=0 )
+    {
+        std::cout << "\nInput error!!!";
+        return;
+    }
+    if (a>= b && a>=c)
+    {
+        if ((b<x && c<y) || (c<x && b<y))
+            std::cout <<"\n Yes";
+        else
+        {
+            std::cout <<"\n No";
+        }
+    }
+    else if (b>=c && b>=a) {
+        if ((a < x && c < y) || (a < y && c < x))
+            std::cout << "\n Yes";
+        else {
+            std::cout << "\n No";
+        }
+    }
+    else{
+        if ((a<x && b<y)||(a<y && b<x))
+        {
+            std::cout <<"\n Yes";
+        }
+        else
+        {
+            std::cout <<"\n No";
+        }
+    }
+
+}
+int main()
+{
+    bool answer;
+    program11();
+    std::cout << "\nOne more? (1 - yes, 0 - no): ";
+    std::cin >> answer;
+    if (answer)
+    {
+        main();
+    }
+    return 0;
+}
