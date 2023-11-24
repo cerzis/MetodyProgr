@@ -18,7 +18,7 @@ void program12 () {
     }
     if (a<= 0 || b<=0 || c<=0 )
     {
-        std::cout <<"storona ne mozhet byt ravna 0";
+        std::cout <<"storona ne mozhet byt ravna 0 ili otricatelnoi";
         return;
     }
     if (a+b>c && b+c>a && a+c>b)
@@ -31,6 +31,11 @@ void program12 () {
         else if (a==b||b==c||a==c)  {
             std::cout <<"ravnobedrennyi";
         }
+
+        else if ( b*b+c*c == a*a || a*a+c*c==b*b || a*a+b*b==c*c )
+        {
+            std::cout <<" pryamougolniy";
+        }
         else if (a!=b && a!=c && b!=c)
         {
             std ::cout <<"raznostoronnyi";
@@ -39,10 +44,7 @@ void program12 () {
     else {
         std::cout <<"ne obrazuet treygolnik";
     }
-    if ((b^2+c^2)==a^2 || (a^2+c^2)==b^2 || (a^2+b^2)==c^2 )
-    {
-        std::cout <<" pryamougolniy";
-    }
+
 
 }
 int main()
