@@ -1,0 +1,48 @@
+#include <iostream>
+#include <limits>
+#include <math.h>
+
+void program14 () {
+    int a;
+    std::cout << "vvedite god iz promezhutka [1600;2100] \n";
+    std::cin >>a;
+
+    if (std::cin.fail()) {
+        std::cout << "\nInput error!!!";
+
+        std::cin.clear();
+
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    if (a < 1600 || a > 2100)
+    {
+        std::cout << "Vvedite god iz promezhutka";
+        return;
+    }
+    if (a % 4 != 0 || a % 100 == 0 && a % 400 != 0 )
+    {
+        std::cout << "god ne visocosniy";
+    }
+    else
+    {
+        std::cout <<"visocosniy";
+    }
+
+
+
+
+
+}
+int main()
+{
+    bool answer;
+    program14();
+    std::cout << "\nOne more? (1 - yes, 0 - no): ";
+    std::cin >> answer;
+    if (answer)
+    {
+        main();
+    }
+    return 0;
+}
