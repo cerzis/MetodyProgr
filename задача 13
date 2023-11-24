@@ -1,0 +1,51 @@
+#include <iostream>
+#include <limits>
+#include <math.h>
+
+void program13 () {
+    double f1,f2,d,a,b,c,x1,x2;
+    std::cout << "vvedite koefficenty \n";
+    std::cin >>a;
+    std::cin >>b;
+    std::cin >>c;
+    if (std::cin.fail()) {
+        std::cout << "\nInput error!!!";
+
+        std::cin.clear();
+
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    d= b * b - 4 * a * c ;
+    if (d >= 0)
+    {
+        x1 = ((-b + sqrt(d)) / (2 * a) );
+        x2 = ((-b - sqrt(d)) / (2 * a) );
+        std::cout << "korni uravneniya " << x1 << " and " <<x2 ;
+        f1 =  a * x1 * x1 + b * x1 + c ;
+        f2 =  a * x2 * x2 + b * x2 + c ;
+        std::cout <<"\n f1="<<f1;
+        std::cout <<"\n f2="<<f2;
+    }
+    else
+    {
+        std::cout <<"Net deistvitelnyh kornei ";
+    }
+
+
+
+
+
+}
+int main()
+{
+    bool answer;
+    program13();
+    std::cout << "\nOne more? (1 - yes, 0 - no): ";
+    std::cin >> answer;
+    if (answer)
+    {
+        main();
+    }
+    return 0;
+}
