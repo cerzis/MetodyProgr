@@ -1,0 +1,43 @@
+#include <iostream>
+#include <limits>
+#include <cmath>
+
+void program15 () {
+    int m,cm;
+    double a,mm;
+    std::cout <<"vedite dlinu v inch \n" ;
+    std::cin >> a;
+
+    if (std::cin.fail()) {
+        std::cout << "\nInput error!!!";
+
+        std::cin.clear();
+
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    if (a <= 0) {
+        std::cout << "Vvedite natur chislo";
+        return;
+    }
+    a = a * 25.4;
+    m = floor(a / 1000);
+    cm = floor((a - 1000 * m) / 10 );
+    mm = a - 1000 * m - 10 * cm ;
+    std::cout <<  m << "m " << cm << "cm " << mm << "mm " ;
+
+
+
+}
+int main()
+{
+    bool answer;
+    program15();
+    std::cout << "\nOne more? (1 - yes, 0 - no): ";
+    std::cin >> answer;
+    if (answer)
+    {
+        main();
+    }
+    return 0;
+}
