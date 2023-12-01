@@ -1,0 +1,355 @@
+#include <iostream>
+#include <limits>
+void program6()
+{
+    int a, b, c1, c2, c3, c4;
+
+    std::cout << "\nEnter a four-digit number: ";
+    std::cin >> a;
+    // проверка, что были введены числа
+    if (std::cin.fail()) // извлечение не производилось
+    {
+        std::cout << "\nInput error!!!";
+        // сбрасываем биты состояния обратно в goodbit, чтобы мы могли использовать ignore()
+        std::cin.clear();
+        // очищаем недопустимый ввод из потока
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    std::cout << "Enter a count: ";
+    std::cin >> b;
+    // проверка, что были введены числа
+    if (std::cin.fail()) // извлечение не производилось
+    {
+        std::cout << "\nInput error!!!";
+        // сбрасываем биты состояния обратно в goodbit, чтобы мы могли использовать ignore()
+        std::cin.clear();
+        // очищаем недопустимый ввод из потока
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    if (abs(a) < 1000 || abs(a) > 9999) // извлечение не производилось
+    {
+        std::cout << "You're stupid! \nYour number out of range!";
+
+        return;
+    }
+    if (b > 9 || b < 0) // извлечение не производилось
+    {
+        std::cout << "\n Your digit isn't digit";
+
+        return;
+    }
+
+    {c1 = abs(a) % 10;
+        c2 = abs(a) / 10 % 10;
+        c3 = abs(a) / 100 % 10;
+        c4 = abs(a) / 1000; }
+
+    if (c1 == b || c2 == b || c3 == b || c4 == b)
+    {
+        std::cout << "Yes";
+    }
+    else
+    {
+        std::cout << "No";
+    }
+
+}
+void program7()
+{
+    int a, c1, c2, c3;
+
+    std::cout << "\nEnter a three-digit number: ";
+    std::cin >> a;
+    // проверка, что были введены числа
+    if (std::cin.fail()) // извлечение не производилось
+    {
+        std::cout << "\nInput error!!!";
+        // сбрасываем биты состояния обратно в goodbit, чтобы мы могли использовать ignore()
+        std::cin.clear();
+        // очищаем недопустимый ввод из потока
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    if (abs(a) < 100 || abs(a) > 999) // извлечение не производилось
+    {
+        std::cout << "You're stupid! \nYour number out of range!";
+
+        return;
+    }
+
+    {c1 = abs(a) % 10;
+        c2 = abs(a) / 10 % 10;
+        c3 = abs(a) / 100 % 10;}
+
+    if ((c1 + c2 + c3) % 2 == 0)
+    {
+        std::cout << "Yes";
+    }
+    else
+    {
+        std::cout << "No";
+    }
+
+}
+void program8()
+{
+    int a, c1, c2, c3, k;
+    k = 0;
+
+    std::cout << "\nEnter a three-digit number: ";
+    std::cin >> a;
+    // проверка, что были введены числа
+    if (std::cin.fail()) // извлечение не производилось
+    {
+        std::cout << "\nInput error!!!";
+        // сбрасываем биты состояния обратно в goodbit, чтобы мы могли использовать ignore()
+        std::cin.clear();
+        // очищаем недопустимый ввод из потока
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    if (abs(a) < 100 || abs(a) > 999) // извлечение не производилось
+    {
+        std::cout << "You're stupid! \nYour number out of range!";
+
+        return;
+    }
+
+    {c1 = abs(a) % 10;
+        c2 = abs(a) / 10 % 10;
+        c3 = abs(a) / 100 % 10; }
+
+    if (c1 == c2 && c2 == c3)
+    {
+        std::cout << "3";
+    }
+    else if (c1 == c2 || c1 == c3 || c3 == c2)
+    {
+        std::cout << "2";
+    }
+    else
+    {
+        std::cout << "0";
+    }
+
+}
+void program9()
+{
+    int a, a1, c1, c2, c3, c4;
+    std::cout << "enter a four-digit number";
+    std::cin >>a;
+    if (std::cin.fail()) // извлечение не производилось
+    {
+        std::cout << "\nInput error!!!";
+        // сбрасываем биты состояния обратно в goodbit, чтобы мы могли использовать ignore()
+        std::cin.clear();
+        // очищаем недопустимый ввод из потока
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    if (abs(a) <1000 || abs(a) > 9999 )
+    {
+        std::cout << "your number out of range";
+        return;
+    }
+    {   c1 = abs(a) % 10;
+        c2 = abs(a) / 10 % 10;
+        c3 = abs(a) / 100 % 10;
+        c4 = abs(a) / 1000;
+        a1 = c1 * 1000 + c2 * 100 + c3 * 10 + c4;
+    }
+    if (abs(a) == abs(a1))
+        std::cout <<"yes";
+    else
+        std::cout <<"no";
+}
+void program10()
+{
+    int a, c1, c2, c3, c4;
+
+    std::cout << "\nEnter a four-digit number: ";
+    std::cin >> a;
+    // проверка, что были введены числа
+    if (std::cin.fail()) // извлечение не производилось
+    {
+        std::cout << "\nInput error!!!";
+        // сбрасываем биты состояния обратно в goodbit, чтобы мы могли использовать ignore()
+        std::cin.clear();
+        // очищаем недопустимый ввод из потока
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    if (abs(a) < 1000 || abs(a) > 9999) // извлечение не производилось
+    {
+        std::cout << "\nYour number out of range!";
+
+        return;
+    }
+    {
+        c1 = abs(a) % 10;
+        c2 = abs(a) / 10 % 10;
+        c3 = abs(a) / 100 % 10;
+        c4 = abs(a) / 1000;
+    }
+    if (c1 ==c2 && c2 == c3 && c3 == c4)
+    {
+        std::cout <<"yes constant";
+    }
+    else if (c1 >= c2 && c2 >=c3 && c3 >= c4)
+    {
+        if (c1 > c2 && c2 > c3 && c3 > c4)
+        {
+            std::cout <<"yes increasing";
+        }
+        else
+            std::cout <<"yes non-decreasing";
+    }
+    else if (c1 <= c2 && c2 <= c3 && c3 <= c4)
+    {
+        if (c1 < c2 && c2 < c3 && c3 < c4)
+        {
+            std::cout <<"yes decreasing";
+        }
+        else
+            std::cout <<"yes non-increasing";
+
+    }
+    else
+        std::cout <<"not a sequence";
+}
+void program11()
+{
+    int a, b, c, x, y;
+    std::cout <<"\nenter brick dimensions: ";
+    std::cin >>a>>b>>c;
+    std::cout <<"\nenter hole dimensions: ";
+    std::cin >>x>>y;
+    if (std::cin.fail()) // извлечение не производилось
+    {
+        std::cout << "\nInput error!!!";
+        // сбрасываем биты состояния обратно в goodbit, чтобы мы могли использовать ignore()
+        std::cin.clear();
+        // очищаем недопустимый ввод из потока
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    if (a <= 0 || b <= 0 || c <= 0 || x <= 0 || y <= 0)
+    {
+        std::cout << "side can't take a negative value or 0";
+        return;
+    }
+    if ((a < x && b < y) || (a < y && b < x) || (b < x && c < y) || (b < y && c < x) || (a < x && c < y) || (a < y && c < x))
+        std::cout <<"yes";
+    else
+        std::cout <<"no";
+}
+void program16()
+{
+ int h, m, s, x, y, z, h1, m1, s1, d;
+ std::cout << "Enter: hours, minutes and seconds now (natural numbers or 0)\n";
+ std::cin >> h >> m >> s;
+    if (std::cin.fail())
+    {
+        std::cout << "\nInput error!!!";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    if ((h < 0) || (m < 0) || (s < 0))
+    {
+        std::cout << "\n not natural numbers";
+        return;
+    }
+    if ((h > 23) || (m > 59) || (s > 59))
+    {
+        std::cout << "\n this numbers can't be time";
+        return;
+    }
+ std::cout << "Enter interval: hours, minutes and seconds (natural numbers or 0)\n";
+ std::cin >> x >> y >> z;
+    if (std::cin.fail())
+    {
+        std::cout << "\nInput error!!!";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    if ((x < 0) || (y < 0) || (z < 0))
+    {
+        std::cout << "\n not natural numbers";
+        return;
+    }
+ s1 = ( s + z ) % 60;
+ m1 = (m + (s + z) / 60 + y) % 60;
+ h1 = (h + (m + (( s + z ) / 60) + y) / 60 + x) % 24;
+ d = (h + (m + y)/ 60 + x) / 24;
+ std::cout << h1 << " hours " << m1 <<  " minutes " << s1 << " seconds ";
+ if (d > 0)
+     std::cout << " after " << d << " days ";
+}
+void program17() {
+    int h, m, s, h1, m1, s1, h2, m2, s2;
+    std::cout << " \nenter start of interval (hours, minutes and seconds) \n";
+    std::cin >> h >> m >> s;
+    if (std::cin.fail()) {
+        std::cout << "\nInput error!!!";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    if ((h < 0) || (m < 0) || (s < 0)) {
+        std::cout << "\n not natural numbers";
+        return;
+    }
+    if ((h > 23) || (m > 59) || (s > 59)) {
+        std::cout << "\n this numbers can't be time";
+        return;
+    }
+    std::cout << "\nenter end of interval (hours, minutes and seconds) \n";
+    std::cin >> h1 >> m1 >> s1;
+    if (std::cin.fail()) {
+        std::cout << "\nInput error!!!";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    if ((h < 0) || (m < 0) || (s < 0)) {
+        std::cout << "\n not natural numbers";
+        return;
+    }
+    if ((h > 23) || (m > 59) || (s > 59)) {
+        std::cout << "\n this numbers can't be time";
+        return;
+    }
+    if (h1 >= h)
+    {
+        s2 = abs((s - s1) % 60);
+        m2 = abs((m - m1 - (s - s1) / 60) % 60);
+        h2 = abs((h - h1 - (m - m1 - (s - s1) / 60) / 60) % 24);
+    }
+    std::cout <<"\n" << h2 << " hours " << m2 << " minutes " << s2 << " seconds is interval ";
+}
+int main()
+{
+    bool answer;
+
+    //program6();
+    //program7();
+    //program8();
+    //program9();
+    //program10();
+    //program11();
+    //program16();
+    program17();
+
+    std::cout << "\nOne more? (1 - yes, 0 - no): ";
+    std::cin >> answer;
+
+    if (answer)
+    {
+        main();
+    }
+    return 0;
+}
