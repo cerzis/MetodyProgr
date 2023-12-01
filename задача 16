@@ -1,0 +1,63 @@
+#include <iostream>
+#include <limits>
+
+
+void program16()
+{
+    int h, m, s, a, b, c, h1, m1, s1, d;
+    std::cout << " enter hours, minutes, seconds  \n";
+    std::cin >> h >> m >> s;
+    if (std::cin.fail())
+    {
+        std::cout << "\nInput error!!!";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    if (h < 0 || m < 0 || s < 0)
+    {
+        std::cout << "\n not natural numbers";
+        return;
+    }
+    if ((h > 23) || (m > 59) || (s > 59))
+    {
+        std::cout << "\n this numbers can't be time";
+        return;
+    }
+    std::cout << "Enter hours, minutes and seconds \n";
+    std::cin >> a >> b >> c;
+    if (std::cin.fail())
+    {
+        std::cout << "\nInput error!!!";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
+    if (a < 0 || b < 0 || c < 0)
+    {
+        std::cout << "\n not natural numbers";
+        return;
+
+    }
+    s1 = ( s + c ) % 60;
+    m1 = (m + (s + c) / 60 + b) % 60;
+    h1 = (h + (m + (( s + c ) / 60) + b) / 60 + a) % 24;
+    d = (h + (m + b)/ 60 + a) / 24;
+    if (d > 0) {
+        std::cout << d << " days ";
+    }
+    std::cout << h1 << " hours " << m1 <<  " minutes " << s1 << " seconds ";
+
+}
+int main()
+{
+    bool answer;
+    program16();
+    std::cout << "\nOne more? (1 - yes, 0 - no): ";
+    std::cin >> answer;
+    if (answer)
+    {
+        main();
+    }
+    return 0;
+}
